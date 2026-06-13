@@ -59,15 +59,16 @@ $('.sim-thumb').on('click', function() {
     
     //Get the image source for the main and thumbnail images
     let thumbSource = $(this).data('image');
-    let mainSource = $('#main-product-image').find('img').attr('src');
+    let mainSource = $(this).parent().parent().parent().find('img').attr('src');
+
 
     //Get the image alt tags for the main and thumbnail images
     let thumbAlt = $(this).find('img').attr('alt');
-    let mainAlt = $('#main-product-image').find('img').attr('alt');
+    let mainAlt = $(this).parent().parent().parent().find('img').attr('alt');
 
     //Get the captions for the main and thumbnail images
     let thumbCap = $(this).data('caption');
-    let mainCap = $('#main-product-image').find('figcaption').html();
+    let mainCap = $(this).parent().parent().parent().find('figcaption').html();
 
     let formattedThumbCap;
     let formattedMainCap;
@@ -89,9 +90,9 @@ $('.sim-thumb').on('click', function() {
     }
 
     //Update the main figure to contain the image source, caption and alt tags
-    $('#main-product-image').find('figure').find('img').attr('src', thumbSource);
-    $('#main-product-image').find('figure').find('img').attr('alt', thumbAlt);
-    $('#main-product-image').find('figcaption').html(formattedThumbCap);
+    $(this).parent().parent().parent().find('figure').find('img').attr('src', thumbSource);
+    $(this).parent().parent().parent().find('figure').find('img').attr('alt', thumbAlt);
+    $(this).parent().parent().parent().find('figcaption').html(formattedThumbCap);
 
 
     //Update the thumbnail li to contain the new image source, caption and alt tags
