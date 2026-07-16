@@ -366,15 +366,6 @@ footer a{
 	text-indent: 0.5em;
 }
 
-/* Add to media query */
-.grad_2020{
-	width: 40vw;
-}
-
-.grad_2024{
-	width: 30vw;
-}
-
 /* Medium devices such as tablets (768px and up) */
 @media only screen and (min-width: 48em){
 	#bio figure{
@@ -382,9 +373,20 @@ footer a{
 		max-width: 45vw;
 	}
 
-	#bio .grad_2024{
-		float: right;
-		margin-left: 0.5em;
+	#bio .grad_2020{
+		float: right;	
+		width: 45vw;
+	}
+
+	.grad_2024{
+		width: 30vw;
+	}
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em){
+	#bio .grad_2020{
+		width: 35vw;
 	}
 }
 
